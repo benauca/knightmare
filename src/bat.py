@@ -3,11 +3,12 @@ from os import path
 from background import Background
 
 class Bat(pygame.sprite.Sprite):
-    SPEED_X = 1
-    SPEED_Y = 0
-    GRAVITY = .3
-    WEIGHT = 50
-    HEIGHT = 50
+    
+    SPEED_X = -3
+    SPEED_Y = 1
+    gravity_y = 10
+    WEIGHT = 35
+    HEIGHT = 35
     bat_folder = 'bat'
    
     def __init__(self):
@@ -44,22 +45,20 @@ class Bat(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = Background.SCREEN_WIDTH / 3
         
-        self.x_pos = 150
-        self.y_pos = 120
-        """ Posiition on init"""
+        self.x_pos = Background.SCREEN_WIDTH / 3
+        self.y_pos = 5
+
     def update(self):
-        if self.x_pos <= 20:
-            self.SPEED = abs(self.SPEED)
-        elif self.x_pos >= Background.SCREEN_WIDTH - 20:
-            self.SPEED = -abs(self.SPEED)
+        
+        if self.x_pos >= Background.SCREEN_WIDTH - 20 or self.x_pos <= 10:
+            self.SPEED_X *= -1
+            self.y_pos += self.gravity_y
             
         self.x_pos += self.SPEED_X
         self.y_pos += self.SPEED_Y
-        self.SPEED_Y += self.GRAVITY
         self.rect.centerx = self.x_pos
         self.rect.centery = self.y_pos
 
-    ''' speed es la velociad en la que se cambia un sprite'''
     def animate(self, speed):
         """Movement Player."""
         
@@ -69,3 +68,9 @@ class Bat(pygame.sprite.Sprite):
             self.current_sprite = 0
         
         self.image = self.sprites[int(self.current_sprite)]
+
+    def remove(self, all_sprites):
+        self.rect.centerx = self.rect.centery = 0
+        all_sprites.remove(self)
+        self.kill()
+                    

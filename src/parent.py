@@ -6,6 +6,11 @@ from os import path
 class ParentScene:
     """ Scene Parent"""
 
+    HIGT_SCORE_TEXT = "HI SCORE"
+    SCORE_TEXT = "SCORE"
+    LIFE_TEXT = "REST"
+    LEVEL_TEXT = "STAGE"
+
     def __init__(self) -> None:
         """Scene Init"""
 

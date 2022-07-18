@@ -1,4 +1,5 @@
 from ast import Str
+import time
 import pygame
 from os import path
 from parent import ParentScene
@@ -29,6 +30,7 @@ class InitScene(ParentScene):
         if self.brand.y_pos > Background.SCREEN_WIDTH / 3:
             self.brand.y_pos -= self.SPEED
         else:
+            time.sleep(3)
             self.running = False
             self.nextScene = True
             self.toScene = 'Start'

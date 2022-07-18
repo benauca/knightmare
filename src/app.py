@@ -49,7 +49,7 @@ class App:
     
             pygame.display.flip()
 
-        time.sleep(3)
+        #time.sleep(3)
     
     def changeScene(self, currentScene):
         if currentScene.nextScene:
