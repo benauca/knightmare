@@ -1,9 +1,11 @@
 import pygame
 from os import path
-from background import SCREEN_WIDTH
+from background import Background
 
 class Bat(pygame.sprite.Sprite):
-    SPEED = 2.5
+    SPEED_X = 1
+    SPEED_Y = 0
+    GRAVITY = .3
     WEIGHT = 50
     HEIGHT = 50
     bat_folder = 'bat'
@@ -40,7 +42,7 @@ class Bat(pygame.sprite.Sprite):
         
         
         self.rect = self.image.get_rect()
-        self.rect.centerx = SCREEN_WIDTH / 3
+        self.rect.centerx = Background.SCREEN_WIDTH / 3
         
         self.x_pos = 150
         self.y_pos = 120
@@ -48,11 +50,12 @@ class Bat(pygame.sprite.Sprite):
     def update(self):
         if self.x_pos <= 20:
             self.SPEED = abs(self.SPEED)
-        elif self.x_pos >= SCREEN_WIDTH - 20:
-            self.SPEED = abs(self.SPEED)
-
-        self.x_pos += self.SPEED + .5
-        self.y_pos += self.SPEED / 5
+        elif self.x_pos >= Background.SCREEN_WIDTH - 20:
+            self.SPEED = -abs(self.SPEED)
+            
+        self.x_pos += self.SPEED_X
+        self.y_pos += self.SPEED_Y
+        self.SPEED_Y += self.GRAVITY
         self.rect.centerx = self.x_pos
         self.rect.centery = self.y_pos
 

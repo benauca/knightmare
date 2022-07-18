@@ -1,6 +1,6 @@
 import pygame
 from os import path
-from background import SCREEN_HEIGHT, img_dir
+from background import Background
 
 class Bullet(pygame.sprite.Sprite):
 
@@ -21,6 +21,6 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         self.rect.y -= self.speedy
         '''global number_bullets'''
-        if not SCREEN_HEIGHT > abs(self.rect.y):
+        if not Background.SCREEN_HEIGHT > abs(self.rect.y):
             Bullet.number_bullets = Bullet.number_bullets - 1
             self.kill()

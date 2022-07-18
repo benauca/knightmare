@@ -1,6 +1,6 @@
 import pygame
 from os import path
-from background import SCREEN_WIDTH
+from background import Background
 
 class Monster(pygame.sprite.Sprite):
 
@@ -48,13 +48,13 @@ class Monster(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.y_pos = 0
 
-        self.rect.centerx = SCREEN_WIDTH  / 3
+        self.rect.centerx = Background.SCREEN_WIDTH / 3
 
         """ Posiition on init"""
     def update(self):
         if self.y_pos <= 20:
             self.SPEED = abs(self.SPEED)
-        elif self.y_pos >= SCREEN_WIDTH - 20:
+        elif self.y_pos >= Background.SCREEN_WIDTH - 20:
             self.SPEED = -abs(self.SPEED)
         self.y_pos += self.SPEED
         self.rect.centery = self.y_pos

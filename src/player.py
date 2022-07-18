@@ -2,7 +2,7 @@
 import pygame
 from os import path
 from bullet import Bullet
-from background import FPS, SCREEN_HEIGHT, SCREEN_WIDTH
+from background import Background
 
 class Player(pygame.sprite.Sprite):
     """Clase que representa la nave del jugador."""
@@ -47,14 +47,14 @@ class Player(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect()
         """ Posiition on init"""
-        self.rect.centerx = SCREEN_WIDTH + 50
-        self.rect.bottom = SCREEN_HEIGHT / 2
+        self.rect.centerx = Background.SCREEN_WIDTH + 50
+        self.rect.bottom = Background.SCREEN_HEIGHT / 2
         self.speedx = 0
         self.speedy = 0
         self.SPEED = 5
         self.bullets = pygame.sprite.Group()
-        self.SCREEN_WIDTH = SCREEN_WIDTH
-        self.SCREEN_HEIGHT = SCREEN_HEIGHT
+        self.SCREEN_WIDTH = Background.SCREEN_WIDTH
+        self.SCREEN_HEIGHT = Background.SCREEN_HEIGHT
 
     def update(self):
     
