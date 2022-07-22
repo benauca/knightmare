@@ -67,7 +67,8 @@ class HandlerTest:
             print("Before: current_bats", self.current_bats)
             self.clock.tick(FPS)
             screen.fill(pygame.Color("white"))
-            
+            pygame.draw.rect(screen, pygame.Color(
+                "black"), (0, SCREEN_HEIGHT - SCREEN_HEIGHT / 4, SCREEN_WIDTH, SCREEN_HEIGHT / 4))
             for bat in bats:
                 # Calculamos la posicion del murcielago  
                 bat.run()

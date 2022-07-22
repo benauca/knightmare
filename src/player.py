@@ -54,12 +54,13 @@ class Player(pygame.sprite.Sprite):
         self.SPEED = 5
         self.bullets = pygame.sprite.Group()
         self.SCREEN_WIDTH = Background.SCREEN_WIDTH
-        self.SCREEN_HEIGHT = Background.SCREEN_HEIGHT
+        self.SCREEN_HEIGHT = Background.HEIGHT_MENU
 
     def update(self):
     
         self.speedx = 0
         self.speedy = 0
+        
         keystate = pygame.key.get_pressed()
         if keystate[pygame.K_LEFT]:
             self.speedx = - self.SPEED

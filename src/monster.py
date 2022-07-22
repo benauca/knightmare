@@ -1,3 +1,4 @@
+import random
 import pygame
 from os import path
 from background import Background
@@ -48,7 +49,7 @@ class Monster(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.y_pos = 0
 
-        self.rect.centerx = Background.SCREEN_WIDTH / 3
+        self.rect.centerx = random.randint(50, Background.SCREEN_WIDTH - 50)
 
         """ Posiition on init"""
     def update(self):

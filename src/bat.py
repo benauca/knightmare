@@ -70,7 +70,10 @@ class Bat(pygame.sprite.Sprite):
         self.image = self.sprites[int(self.current_sprite)]
 
     def remove(self, all_sprites):
-        self.rect.centerx = self.rect.centery = 0
+
+        self.x_pos = self.rect.centerx = Background.SCREEN_WIDTH
+        self.y_pos = self.rect.centery = Background.SCREEN_HEIGHT 
+        self.SPEED_X = self.SPEED_Y = self.gravity_y = 0
         all_sprites.remove(self)
-        self.kill()
+        self.kill
                     

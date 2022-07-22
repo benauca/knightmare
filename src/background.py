@@ -5,6 +5,7 @@ class Background:
 
     SCREEN_WIDTH = 800
     SCREEN_HEIGHT = 480
+    HEIGHT_MENU = SCREEN_HEIGHT - SCREEN_HEIGHT / 4
     FPS = 60
 
     # define colors
