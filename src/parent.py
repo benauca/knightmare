@@ -1,7 +1,15 @@
+from operator import le
 import pygame
 from background import Background
 from os import path
 
+class Resume:
+
+    def __init__(self, score = 0, lifes = 3, level = 1, hi_score = 99999) -> None:
+        self.hi_score = hi_score
+        self.level = level
+        self.lifes = lifes
+        self.score = score
 
 class ParentScene:
     """ Scene Parent"""
@@ -16,9 +24,10 @@ class ParentScene:
 
         self.nextScene = False
         self.toScene = ""
+        
         pygame.init()
         pygame.mixer.init()
-        
+                
         self.all_sprites = pygame.sprite.Group()
         self.screen = pygame.display.set_mode((Background.SCREEN_WIDTH, Background.SCREEN_HEIGHT))
         pygame.display.set_caption("Knightmare!")

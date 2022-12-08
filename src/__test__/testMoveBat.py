@@ -3,7 +3,7 @@ import pygame
 from pygame.locals import *
 
 SCREEN_WIDTH = 480
-SCREEN_HEIGHT = 600
+SCREEN_HEIGHT = 640
 FPS = 60
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 class TestMoveBat:

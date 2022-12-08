@@ -11,9 +11,9 @@ class Player(pygame.sprite.Sprite):
     HEIGHT = 50
     character_folder = 'character'
 
-    def __init__(self):
+    def __init__(self, position, group):
         """Inicializamos la clase Player."""
-        pygame.sprite.Sprite.__init__(self)
+        pygame.sprite.Sprite.__init__(self, group)
 
         self.sprites = []
         self.image00 = pygame.image.load(path.join(path.dirname(__file__), "assets", self.character_folder, 'tile000.png'))
@@ -45,12 +45,12 @@ class Player(pygame.sprite.Sprite):
         self.current_sprite = 0
         self.image = self.sprites[self.current_sprite]
 
-        self.rect = self.image.get_rect()
+        #self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect(center=position)
         """ Posiition on init"""
         self.rect.centerx = Background.SCREEN_WIDTH + 50
         self.rect.bottom = Background.SCREEN_HEIGHT / 2
-        self.speedx = 0
-        self.speedy = 0
+        self.speedx = self.speedy = 0
         self.SPEED = 5
         self.bullets = pygame.sprite.Group()
         self.SCREEN_WIDTH = Background.SCREEN_WIDTH
