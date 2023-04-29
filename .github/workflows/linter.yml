@@ -1,0 +1,36 @@
+# Linter Workflow
+---
+name: Linter
+on:
+    push:
+        branches-ignore:
+            - main
+    pull_request:
+
+jobs:
+    linter-check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@main
+            - name: 'Yaml linter'
+              uses: reviewdog/action-yamllint@v1
+              with:
+                  github_token: ${{ secrets.github_token }}
+                  reporter: github-check
+                  level: warning
+            - name: 'Markdown linter'
+              if: always()
+              uses: reviewdog/action-markdownlint@v0
+              with:
+                  github_token: ${{ secrets.github_token }}
+                  reporter: github-check
+
+            - name: 'Markdown Link Check'
+              if: always ()
+              uses: gaurav-nelson/github-action-markdown-link-check@v1
+              with:
+                  use-quiet-mode: 'yes'
+                  use-verbose-mode: 'yes'
+                  config-file: 'markdown-link-check.json'
+                  max-depth: 2
