@@ -1,38 +1,41 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+name: "🐛 Bug Report"
+description: Create a new ticket for a bug.
+title: "🐛 [BUG] - <title>"
+labels: [
+  "bug"
+]
+assignees: 'benauca'
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Description of the problem
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+[Describe the problem here clearly and in detail]
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Steps to reproduce the problem
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+[Provide a detailed list of the steps necessary to reproduce the problem]
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+## Expected behavior
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+[Describe what should happen if there wasn't a problem]
 
-**Additional context**
-Add any other context about the problem here.
+## Current behavior
+
+[Describe what's currently happening that shouldn't be happening]
+
+## Additional information
+
+[Add any additional information that may be relevant, such as screenshots or error logs]
+
+## Environment
+
+[Provide information about your environment, such as application version, operating system, and any other information that may be relevant to the issue]
+
+## Possible solutions
+
+[If you have any ideas on how to fix the problem, provide them here]
+
+## Associated pull request ID
+
+- [ ] [Provide the ID of the associated pull request here]
